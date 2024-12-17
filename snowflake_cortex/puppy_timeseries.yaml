@@ -1,0 +1,52 @@
+name: Revenue
+tables:
+  - name: daily_weight
+    description: Daily total weight, measured in kilograms (kg) of barney the puppy
+    base_table:
+      database: puppy_db
+      schema: puppy_data
+      table: daily_weight
+    time_dimensions:
+      - name: date
+        expr: date
+        description: date with measures of weight.
+        unique: true
+        data_type: date
+    measures:
+      - name: daily_weight_kg
+        expr: weight_kg
+        description: total weight of puppy for the given day measured in kilograms (kg)
+        synonyms: ["heavy", "mass"]
+        default_aggregation: avg
+        data_type: number
+
+  - name: hourly_activity
+    description: Hourly activity sliced by day, time and style of activity broken into minutes of barney the puppy
+    base_table:
+      database: puppy_db
+      schema: puppy_data
+      table: hourly_activity
+    time_dimensions:
+      - name: activity_ts
+        expr: activity_ts
+        description: The hourly timestamp of the start of the activity period hour
+        unique: false
+        data_type: timestamp
+    dimensions:
+      - name: activity_type
+        expr: activity_type
+        description: The activity type 
+        unique: false
+        data_type: varchar
+        sample_values:
+          - play
+          - active
+          - rest
+    measures:
+      - name: hourly_activity_minutes
+        expr: activity_min
+        description: the minutes spent performing this style of activity within the hour
+        synonyms: ["activity", "doing"]
+        default_aggregation: sum
+        data_type: number
+
