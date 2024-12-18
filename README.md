@@ -1,3 +1,10 @@
+# Puppy Data
+🐾 Puppy Data 🐾 combines a love of data and dogs — a project to track Barney the puppy🐶! Using load-cells and low power motion tracking sensors I built an automated system to monitor Barney’s weight, sleep habits, and activity📊. Data is sent to Home Assistant for easy tracking via a slick interface 📱. CotexAI and a Streamlit application allows me to ask questions like _“How much heavier is Barney this month?”_ or _“When was he most active?”_   🐕💡. 
+
+A blend of IoT, DIY tech, and puppy love ❤️📈!
+
+Blog - https://simon-aubury.medium.com/puppy-data-192a25401ccd
+
 
 # Snowflake Cortex Analyst  
 The Snowflake Cortex Analyst of Barney data data is based on the [Getting Started with Cortex Analyst in Snowflake](https://quickstarts.snowflake.com/guide/getting_started_with_cortex_analyst_in_snowflake/index.html#1) exercise
